@@ -3,6 +3,7 @@ using EFChallenge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFChallenge.Data.Migrations
 {
     [DbContext(typeof(EFChallengeContext))]
-    partial class EFChallengeContextModelSnapshot : ModelSnapshot
+    [Migration("20220708045307_AddStateRelation")]
+    partial class AddStateRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,28 +41,6 @@ namespace EFChallenge.Data.Migrations
                     b.ToTable("Country", (string)null);
                 });
 
-            modelBuilder.Entity("EFChallenge.Data.Models.Company.County", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StateId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StateId");
-
-                    b.ToTable("County", (string)null);
-                });
-
             modelBuilder.Entity("EFChallenge.Data.Models.Company.State", b =>
                 {
                     b.Property<int>("Id")
@@ -83,17 +63,6 @@ namespace EFChallenge.Data.Migrations
                     b.ToTable("State", (string)null);
                 });
 
-            modelBuilder.Entity("EFChallenge.Data.Models.Company.County", b =>
-                {
-                    b.HasOne("EFChallenge.Data.Models.Company.State", "State")
-                        .WithMany("Counties")
-                        .HasForeignKey("StateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("State");
-                });
-
             modelBuilder.Entity("EFChallenge.Data.Models.Company.State", b =>
                 {
                     b.HasOne("EFChallenge.Data.Models.Company.Country", "Country")
@@ -108,11 +77,6 @@ namespace EFChallenge.Data.Migrations
             modelBuilder.Entity("EFChallenge.Data.Models.Company.Country", b =>
                 {
                     b.Navigation("States");
-                });
-
-            modelBuilder.Entity("EFChallenge.Data.Models.Company.State", b =>
-                {
-                    b.Navigation("Counties");
                 });
 #pragma warning restore 612, 618
         }

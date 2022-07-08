@@ -12,5 +12,9 @@ namespace EFChallenge.Data.Models.Company
        
         public int CountryId { get; set; }
 
+        public Country Country { get; set; } = null!;
+
+        public List<County> ? Counties { get; set; }
+
     }
 }

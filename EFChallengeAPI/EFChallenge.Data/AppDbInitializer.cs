@@ -15,20 +15,22 @@ namespace EFChallenge.Data
     {
         public static void Seed(IApplicationBuilder applicationBuilder)
         {
-            using(var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetService<EFChallengeContext>();
+            //using(var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetService<EFChallengeContext>();
 
-                if (!context.Countries.Any())
-                {
-                    context.Countries.AddRange(new Country()
-                    {
-                        Name = "Mexico"
-                    });
+            //    if (!context.Countries.Any())
+            //    {
+            //        context.Countries.AddRange(new Country()
+            //        {
+            //            Name = "Mexico"
+            //        });
 
-                    context.SaveChanges();
-                }
-            }
+            //        context.SaveChanges();
+            //    }
+            //}
+
         }
+
     }
 }
