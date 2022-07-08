@@ -13,9 +13,4 @@
         public ItemSubType? ItemSubType { get; set; } = null;
         public ItemStatus ItemStatus { get; set; } = null!;
     }
-
-    public class ItemLocationConstraint
-    {
-
-    }
 }

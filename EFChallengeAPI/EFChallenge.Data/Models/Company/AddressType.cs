@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EFChallenge.Data.Models.Company
+﻿namespace EFChallenge.Data.Models.Company
 {
     public class AddressType
     {

@@ -1,12 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EFChallenge.Data.Models.Company
+﻿namespace EFChallenge.Data.Models.Company
 {
     public class Company
     {
         public int Id { get; set; }
-
-        
         public string Name { get; set; } = null!;
     }
 }
