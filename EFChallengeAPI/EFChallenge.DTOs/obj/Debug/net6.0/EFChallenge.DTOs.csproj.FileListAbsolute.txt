@@ -1,0 +1,12 @@
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\bin\Debug\net6.0\EFChallenge.DTOs.deps.json
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\bin\Debug\net6.0\EFChallenge.DTOs.dll
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\bin\Debug\net6.0\EFChallenge.DTOs.pdb
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.csproj.AssemblyReference.cache
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.AssemblyInfoInputs.cache
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.AssemblyInfo.cs
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.csproj.CoreCompileInputs.cache
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.dll
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\refint\EFChallenge.DTOs.dll
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\EFChallenge.DTOs.pdb
+C:\Proyectos\CoE_NET\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.DTOs\obj\Debug\net6.0\ref\EFChallenge.DTOs.dll
