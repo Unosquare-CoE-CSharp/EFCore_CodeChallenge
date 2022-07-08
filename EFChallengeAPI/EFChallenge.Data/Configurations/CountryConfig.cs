@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFChallenge.Data.Configurations
 {
-    internal class AddressTypeConfig : IEntityTypeConfiguration<AddressType>
+    internal class CountryConfig : IEntityTypeConfiguration<Country>
     {
-        public void Configure(EntityTypeBuilder<AddressType> entity)
+        public void Configure(EntityTypeBuilder<Country> entity)
         {
             entity.HasIndex(c => c.Name).IsUnique();
-            entity.HasData(new AddressType
+            entity.HasData(new Country
             {
                 Id = 1,
-                Name = "Physical Address"
+                Name = "United States of America"
             });
-            entity.HasData(new AddressType
+            entity.HasData(new Country
             {
-                Id = 2,
-                Name = "IRS Address"
+                Id = 2,                
+                Name = "Mexico"
             });
         }
     }

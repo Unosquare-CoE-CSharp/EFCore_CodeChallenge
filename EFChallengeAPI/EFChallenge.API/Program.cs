@@ -21,6 +21,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    await using var scope = app.Services.CreateAsyncScope();
+    using var db = scope.ServiceProvider.GetService<EFChallenge.Data.EFChallengeDbContext>();
+    if (db is not null)
+    {
+        await db.Database.MigrateAsync();
+    }
 }
 
 app.UseHttpsRedirection();
