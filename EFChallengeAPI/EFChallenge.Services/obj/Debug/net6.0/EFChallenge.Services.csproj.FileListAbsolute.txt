@@ -1,0 +1,17 @@
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Services.deps.json
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Services.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Services.pdb
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.csproj.AssemblyReference.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.AssemblyInfoInputs.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.AssemblyInfo.cs
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.csproj.CoreCompileInputs.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\refint\EFChallenge.Services.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.pdb
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\ref\EFChallenge.Services.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Services.runtimeconfig.json
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Data.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\bin\Debug\net6.0\EFChallenge.Data.pdb
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.csproj.CopyComplete
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Services\obj\Debug\net6.0\EFChallenge.Services.genruntimeconfig.cache

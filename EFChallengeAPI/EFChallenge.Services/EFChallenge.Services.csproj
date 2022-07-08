@@ -10,4 +10,8 @@
     <Folder Include="DI\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EFChallenge.Data\EFChallenge.Data.csproj" />
+  </ItemGroup>
+
 </Project>

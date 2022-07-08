@@ -1,0 +1,14 @@
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\bin\Debug\net6.0\EFChallenge.Data.deps.json
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\bin\Debug\net6.0\EFChallenge.Data.runtimeconfig.json
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\bin\Debug\net6.0\EFChallenge.Data.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\bin\Debug\net6.0\EFChallenge.Data.pdb
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.csproj.AssemblyReference.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.AssemblyInfoInputs.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.AssemblyInfo.cs
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.csproj.CoreCompileInputs.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\refint\EFChallenge.Data.dll
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.pdb
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\EFChallenge.Data.genruntimeconfig.cache
+C:\Working\EFCore_CodeChallenge\EFChallengeAPI\EFChallenge.Data\obj\Debug\net6.0\ref\EFChallenge.Data.dll
