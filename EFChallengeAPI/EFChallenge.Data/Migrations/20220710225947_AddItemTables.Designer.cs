@@ -4,6 +4,7 @@ using EFChallenge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFChallenge.Data.Migrations
 {
     [DbContext(typeof(EFChallengeContext))]
-    partial class EFChallengeContextModelSnapshot : ModelSnapshot
+    [Migration("20220710225947_AddItemTables")]
+    partial class AddItemTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -186,8 +188,8 @@ namespace EFChallenge.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -203,11 +205,6 @@ namespace EFChallenge.Data.Migrations
                         {
                             Id = 2,
                             Name = "Mexico"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Argentina"
                         });
                 });
 
@@ -399,29 +396,6 @@ namespace EFChallenge.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ItemContainerConstraint", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ItemTypeId = 1,
-                            Max = 1,
-                            Min = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ItemTypeId = 2,
-                            Max = 2,
-                            Min = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ItemTypeId = 3,
-                            Max = 1,
-                            Min = 1
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemIdentifier", b =>
@@ -467,23 +441,6 @@ namespace EFChallenge.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ItemStatus", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "In Warehouse"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "In Transit"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Delivered"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemSubType", b =>
@@ -518,23 +475,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ItemType", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Coke"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "24 Cokes Package"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Box with 4 Cokes Package"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.Address", b =>

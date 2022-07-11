@@ -4,6 +4,7 @@ using EFChallenge.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFChallenge.Data.Migrations
 {
     [DbContext(typeof(EFChallengeContext))]
-    partial class EFChallengeContextModelSnapshot : ModelSnapshot
+    [Migration("20220711004216_AddTableStateWithAssembly")]
+    partial class AddTableStateWithAssembly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,26 +64,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasIndex("CountyId");
 
                     b.ToTable("Address", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddressTypeId = 2,
-                            City = "Portland",
-                            CountyId = 1,
-                            Line1 = "4800 Meadows Road, Suite 300 Lake Oswego",
-                            ZipPostalCode = "97035"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AddressTypeId = 1,
-                            City = "Guadalajara",
-                            CountyId = 2,
-                            Line1 = "Av. de las Américas 1536, Country Club",
-                            ZipPostalCode = "44637"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.AddressType", b =>
@@ -99,18 +81,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AddreessType", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Phsycal Address"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "IRS Address"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.Company", b =>
@@ -128,13 +98,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Company", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Unosquare"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.CompanyAddress", b =>
@@ -160,20 +123,6 @@ namespace EFChallenge.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("CompanyAddress", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddressId = 1,
-                            CompanyId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AddressId = 2,
-                            CompanyId = 1
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.Country", b =>
@@ -231,20 +180,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasIndex("StateId");
 
                     b.ToTable("County", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Washington",
-                            StateId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Guadalajara",
-                            StateId = 2
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.State", b =>
@@ -399,29 +334,6 @@ namespace EFChallenge.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ItemContainerConstraint", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ItemTypeId = 1,
-                            Max = 1,
-                            Min = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ItemTypeId = 2,
-                            Max = 2,
-                            Min = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ItemTypeId = 3,
-                            Max = 1,
-                            Min = 1
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemIdentifier", b =>
@@ -467,23 +379,6 @@ namespace EFChallenge.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ItemStatus", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "In Warehouse"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "In Transit"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Delivered"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemSubType", b =>
@@ -518,23 +413,6 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ItemType", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Coke"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "24 Cokes Package"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Box with 4 Cokes Package"
-                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Company.Address", b =>

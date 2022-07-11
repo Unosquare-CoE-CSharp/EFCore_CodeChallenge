@@ -3,16 +3,19 @@
 // Developers: Christian Alvarado 
 // Company:  Unosquare 2022
 //-----------------------------------------------
-namespace EFChallenge.Data.Models.Item
+
+namespace EFChallenge.Data.Models.Company
 {
     /// <summary>
-    /// Class IdentifierType
+    /// Class County
     /// </summary>
-    public class IdentifierType
+    public class County
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public List<Identifier> Identifiers { get; set; } = null!;
-    }    
+        public int StateId { get; set; }
+        public State State { get; set; } = null!;
+        public List<Address> Addresses { get; set; } = null!;
 
+    }
 }

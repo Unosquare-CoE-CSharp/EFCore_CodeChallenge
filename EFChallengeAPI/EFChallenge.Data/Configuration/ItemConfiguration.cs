@@ -4,32 +4,27 @@
 // Company:  Unosquare 
 //-----------------------------------------------
 
-using EFChallenge.Data.Models.Company;
+using EFChallenge.Data.Models.Item;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFChallenge.Data.Configuration
 {
     /// <summary>
-    /// Class CountryConfiguration
-    /// Implements <IEntityTypeConfiguration<Country>
+    /// Class ItemIdentifierConfiguration
+    /// Implements IEntityTypeConfiguration<Item>
     /// </summary>
-    public class CountryConfiguration : IEntityTypeConfiguration<Country>
+    public class ItemConfiguration : IEntityTypeConfiguration<Item>
     {
         /// <summary>
         /// Method that sets the properties of the class
         /// </summary>
         /// <param name="builder"> of type EntityTypeBuilder</param>
-        public void Configure(EntityTypeBuilder<Country> builder)
+        public void Configure(EntityTypeBuilder<Item> builder)
         {
-            builder.ToTable("Country");
+            builder.ToTable("Item");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Name).HasMaxLength(25).IsRequired();
-
-            builder.HasData(
-                new Country { Id = 1, Name = "USA" },
-                new Country { Id = 2, Name = "Mexico" },
-                new Country { Id = 3, Name = "Argentina"});
+            builder.HasOne(z => z.ParentItem).WithMany().HasForeignKey(z => z.ParentItemId);
         }
     }
 }

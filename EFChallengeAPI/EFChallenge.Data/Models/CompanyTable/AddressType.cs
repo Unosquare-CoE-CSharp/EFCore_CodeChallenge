@@ -3,16 +3,16 @@
 // Developers: Christian Alvarado 
 // Company:  Unosquare 2022
 //-----------------------------------------------
-namespace EFChallenge.Data.Models.Item
+
+namespace EFChallenge.Data.Models.Company
 {
     /// <summary>
-    /// Class IdentifierType
+    /// Class AddressType
     /// </summary>
-    public class IdentifierType
+    public class AddressType
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public List<Identifier> Identifiers { get; set; } = null!;
-    }    
-
+        public List<Address>? Addresses { get; set; }
+    }
 }

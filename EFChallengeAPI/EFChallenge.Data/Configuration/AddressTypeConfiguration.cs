@@ -1,7 +1,7 @@
 ﻿//-----------------------------------------------
-// Proyect: EFChallenge 
-// Developers: Christian Alvarado 
-// Company:  Unosquare 
+// Proyect: EFChallenge                         
+// Developers: Christian Alvarado               
+// Company:  Unosquare 2022                     
 //-----------------------------------------------
 
 using EFChallenge.Data.Models.Company;
@@ -11,25 +11,24 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace EFChallenge.Data.Configuration
 {
     /// <summary>
-    /// Class StateConfiguration
-    /// Implements <IEntityTypeConfiguration<State>
+    /// Class AddressConfiguration
+    /// Implements <IEntityTypeConfiguration<AddressType>
     /// </summary>
-    public class StateConfiguration : IEntityTypeConfiguration<State>
+    public class AddressTypeConfiguration : IEntityTypeConfiguration<AddressType>
     {
         /// <summary>
         /// Method that sets the properties of the class
         /// </summary>
         /// <param name="builder"> of type EntityTypeBuilder</param>
-        public void Configure(EntityTypeBuilder<State> builder)
+        public void Configure(EntityTypeBuilder<AddressType> builder)
         {
-            builder.ToTable("State");
+            builder.ToTable("AddreessType");
+
             builder.HasKey(x => x.Id);
-            builder.HasOne(z => z.Country).WithMany(z => z.States).HasForeignKey(z => z.CountryId);
 
             builder.HasData(
-                new State { Id = 1, CountryId = 1, Name = "Oregon" },
-                new State { Id = 2, CountryId = 2, Name = "Jalisco" });
+                new AddressType { Id = 1, Name = "Phsycal Address" },
+                new AddressType { Id = 2, Name = "IRS Address" });
         }
     }
-  }
-
+}

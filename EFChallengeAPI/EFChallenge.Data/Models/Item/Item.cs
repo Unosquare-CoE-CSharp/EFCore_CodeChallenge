@@ -1,5 +1,14 @@
-﻿namespace EFChallenge.Data.Models.Item
+﻿//-----------------------------------------------
+// Proyect: EFChallenge 
+// Developers: Christian Alvarado 
+// Company:  Unosquare 2022
+//-----------------------------------------------
+
+namespace EFChallenge.Data.Models.Item
 {
+    /// <summary>
+    /// Class Item
+    /// </summary>
     public class Item
     {
         public Guid Id { get; set; } = Guid.NewGuid();
@@ -8,14 +17,11 @@
         public int ItemSubTypeId { get; set; }
         public int LocationId { get; set; }
         public Guid? ParentItemId { get; set; }
-        public Item? ParentItem { get; set; }
         public ItemType ItemType { get; set; } = null!;
-        public ItemSubType? ItemSubType { get; set; } = null;
+        public ItemSubType? ItemSubType { get; set; } = null!;
         public ItemStatus ItemStatus { get; set; } = null!;
-    }
+        public Item? ParentItem { get; set; } = null!;
 
-    public class ItemLocationConstraint
-    {
-
+        public ItemIdentifier? ItemIdentifier { get; set; } = null!;
     }
 }
