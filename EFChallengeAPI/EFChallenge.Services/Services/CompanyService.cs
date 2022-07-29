@@ -15,6 +15,7 @@ namespace EFChallenge.Services.Services
 
         public void AddCountry(Country country)
         {
+            //No uses usings para crear el contexto, es mejor inyectarlo en el constructor.
             using(var context = new EFChallengeContext())
             {
                 context.Add(country);
