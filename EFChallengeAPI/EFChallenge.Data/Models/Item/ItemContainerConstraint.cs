@@ -20,6 +20,8 @@ namespace EFChallenge.Data.Models.Item
 
         [Range(0, int.MaxValue)]
         public int Max { get; set; } = 0;
-        public ItemType ItemType { get; set; } = null!;
+
+        //Navigation Properties
+        public ItemType? ItemType { get; set; }
     }
 }

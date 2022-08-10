@@ -40,10 +40,11 @@ namespace EFChallenge.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //This ones are applied via Conventions
             modelBuilder.Entity<ItemAddendum>().ToTable("ItemAddendum");
             modelBuilder.Entity<ItemSubType>().ToTable("ItemSubtype");
             modelBuilder.Entity<IdentifierType>().ToTable("IdentifierType");
-            
+
             //Seed(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

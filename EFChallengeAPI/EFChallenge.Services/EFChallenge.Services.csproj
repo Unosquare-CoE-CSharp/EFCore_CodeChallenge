@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DI\" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EFChallenge.Data\EFChallenge.Data.csproj" />
+    <ProjectReference Include="..\EFChallenge.DTOs\EFChallenge.DTOs.csproj" />
   </ItemGroup>
 
 </Project>

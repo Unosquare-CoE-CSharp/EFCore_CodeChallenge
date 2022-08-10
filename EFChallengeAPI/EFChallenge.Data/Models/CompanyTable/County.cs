@@ -14,6 +14,8 @@ namespace EFChallenge.Data.Models.Company
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int StateId { get; set; }
+
+        //Navigation Properties
         public State State { get; set; } = null!;
         public List<Address> Addresses { get; set; } = null!;
 

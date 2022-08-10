@@ -1,4 +1,5 @@
 using EFChallenge.Data;
+using EFChallenge.Services.DI;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+
+//Register services with Dependency Injection
+ServiceDI.RegisterDI(builder.Services);
 
 //Connection to BD
 builder.Services.AddDbContext<EFChallengeContext>(options =>

@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EFChallenge.Data\EFChallenge.Data.csproj" />
+    <ProjectReference Include="..\EFChallenge.DTOs\EFChallenge.DTOs.csproj" />
+    <ProjectReference Include="..\EFChallenge.Services\EFChallenge.Services.csproj" />
   </ItemGroup>
 
 </Project>

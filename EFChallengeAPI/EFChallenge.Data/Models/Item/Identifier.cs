@@ -15,7 +15,9 @@ namespace EFChallenge.Data.Models.Item
         public string Data { get; set; } = null!;
 
         //Foreign Id
-        public int IdentifierTypeId { get; set; } 
+        public int IdentifierTypeId { get; set; }
+
+        //Navigation Properties
         public IdentifierType IdentifierType { get; set; } = null!;
 
         //one to one

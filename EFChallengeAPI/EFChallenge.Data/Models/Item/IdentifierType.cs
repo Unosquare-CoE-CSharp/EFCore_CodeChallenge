@@ -12,7 +12,9 @@ namespace EFChallenge.Data.Models.Item
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public List<Identifier> Identifiers { get; set; } = null!;
+
+        //Navigation Properties
+        public List<Identifier>? Identifiers { get; set; } = null!;
     }    
 
 }
