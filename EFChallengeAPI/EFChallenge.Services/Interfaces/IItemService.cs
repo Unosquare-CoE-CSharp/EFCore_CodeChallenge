@@ -1,6 +1,7 @@
 ﻿using EFChallenge.Data.Models.Item;
 using EFChallenge.DTOs.ItemDTOs;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,6 @@ namespace EFChallenge.Services.Interfaces
         public ItemDto UpdateItem(ItemDto itemDto);
         public Item UpdateItem(int id, Item item);
         public Item DeleteItem(Guid id);
-        public IList<Item> GetItems();
+        public IEnumerable<ItemReportDTO> GetItemReport();
     }
 }

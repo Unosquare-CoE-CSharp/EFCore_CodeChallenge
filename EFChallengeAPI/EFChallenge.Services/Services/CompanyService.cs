@@ -1,7 +1,6 @@
 ﻿using EFChallenge.Data;
 using EFChallenge.Data.Models.Company;
 using EFChallenge.Services.Interfaces;
-using System.Web.Mvc;
 
 namespace EFChallenge.Services.Services
 {

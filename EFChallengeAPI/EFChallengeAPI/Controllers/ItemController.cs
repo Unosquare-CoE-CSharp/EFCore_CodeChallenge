@@ -66,6 +66,21 @@ namespace EFChallenge.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetItemReport")]
+        public IActionResult GetReport()
+        {
+            try
+            {
+                var result = _itemService.GetItemReport();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
         
     }
 }

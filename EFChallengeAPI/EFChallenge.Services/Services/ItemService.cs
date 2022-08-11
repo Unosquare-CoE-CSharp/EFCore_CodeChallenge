@@ -3,6 +3,8 @@ using EFChallenge.Data.Models.Item;
 using EFChallenge.DTOs.ItemDTOs;
 using EFChallenge.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace EFChallenge.Services.Services
 {
@@ -38,10 +40,6 @@ namespace EFChallenge.Services.Services
             }
             return null;
         }
-        public IList<Item> GetItems()
-         {
-                throw new NotImplementedException();
-         }
 
         public ItemDto UpdateItem(ItemDto itemDto)
          {
@@ -70,5 +68,30 @@ namespace EFChallenge.Services.Services
             return null;
         }
 
+        public IEnumerable<ItemReportDTO> GetItemReport()
+        {
+            var result =  _context.Items
+                .Include(t => t.ItemType)
+                .Include(t => t.ParentItem)
+                    .ThenInclude(t => t.ItemType)
+                .Include(t => t.ItemStatus)
+                .Include(t => t.ItemIdentifier) 
+                .Include(t => t.ItemIdentifier) 
+                    .ThenInclude(t => t.identifier)
+                .Include(t => t.ItemSubType)
+                .Select( t => new ItemReportDTO() {
+                    Id = t.Id,
+                    TypeName = t.ItemType.Name,
+                    ParentId = (Guid)t.ParentItemId,
+                    ParentType = t.ParentItem.ItemType.Name,
+                    StatusName = t.ItemStatus.Name,
+                    IdentifierID = t.ItemIdentifier.ItemIdentifierId,
+                    IdentifierTypeName = t.ItemIdentifier.identifier.IdentifierType.Name,
+                    Data = t.ItemIdentifier.identifier.Data,
+                    ItemSubTypeName = t.ItemSubType.Name
+                }).ToList();
+
+            return result;
+        }
     }
 }
