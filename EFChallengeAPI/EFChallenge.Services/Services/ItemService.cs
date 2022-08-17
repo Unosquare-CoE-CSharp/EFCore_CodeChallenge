@@ -76,22 +76,21 @@ namespace EFChallenge.Services.Services
                     .ThenInclude(t => t.ItemType)
                 .Include(t => t.ItemStatus)
                 .Include(t => t.ItemIdentifier) 
-                .Include(t => t.ItemIdentifier) 
                     .ThenInclude(t => t.identifier)
                 .Include(t => t.ItemSubType)
-                .Select( t => new ItemReportDTO() {
-                    Id = t.Id,
-                    TypeName = t.ItemType.Name,
-                    ParentId = (Guid)t.ParentItemId,
-                    ParentType = t.ParentItem.ItemType.Name,
-                    StatusName = t.ItemStatus.Name,
-                    IdentifierID = t.ItemIdentifier.ItemIdentifierId,
-                    IdentifierTypeName = t.ItemIdentifier.identifier.IdentifierType.Name,
-                    Data = t.ItemIdentifier.identifier.Data,
-                    ItemSubTypeName = t.ItemSubType.Name
+                .Select( x => new ItemReportDTO() {
+                    Id = x.Id,
+                    TypeName = x.ItemType.Name,
+                    ParentId = (Guid)x.ParentItemId,
+                    ParentType = x.ParentItem.ItemType.Name,
+                    StatusName = x.ItemStatus.Name,
+                    IdentifierID = x.ItemIdentifier.ItemIdentifierId,
+                    IdentifierTypeName = x.ItemIdentifier.identifier.IdentifierType.Name,
+                    Data = x.ItemIdentifier.identifier.Data,
+                    ItemSubTypeName = x.ItemSubType.Name
                 }).ToList();
-
             return result;
         }
     }
 }
+

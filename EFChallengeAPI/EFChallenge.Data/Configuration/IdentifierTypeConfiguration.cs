@@ -1,30 +1,32 @@
 ﻿//-----------------------------------------------
-// Proyect: EFChallenge                         
-// Developers: Christian Alvarado               
-// Company:  Unosquare 2022                     
+// Proyect: EFChallenge 
+// Developers: Christian Alvarado 
+// Company:  Unosquare 
 //-----------------------------------------------
 
-using EFChallenge.Data.Models.Company;
+using EFChallenge.Data.Models.Item;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 
 namespace EFChallenge.Data.Configuration
 {
     /// <summary>
-    /// Class CompanyConfiguration
-    /// Implements <IEntityTypeConfiguration<Company>
+    /// Class IdentifierTypeConfiguration
+    /// Implements <IEntityTypeConfiguration<Country>
     /// </summary>
-    public class CompanyConfiguration : IEntityTypeConfiguration<Company>
+    public class IdentifierTypeConfiguration : IEntityTypeConfiguration<IdentifierType>
     {
         /// <summary>
         /// Method that sets the properties of the class
         /// </summary>
         /// <param name="builder"> of type EntityTypeBuilder</param>
-        public void Configure(EntityTypeBuilder<Company> builder)
+        public void Configure(EntityTypeBuilder<IdentifierType> builder)
         {
-            builder.ToTable("Company");
+            builder.ToTable("IdentifierType");
 
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).HasMaxLength(25).IsRequired();
 
             builder.HasData(Get());
         }
@@ -33,11 +35,11 @@ namespace EFChallenge.Data.Configuration
         /// Method seed data
         /// </summary>
         /// <returns>Data list</returns>
-        private List<Company> Get()
+        private List<IdentifierType> Get()
         {
-            return new List<Company>()
+            return new List<IdentifierType>()
             {
-                new Company { Id = 1, Name = "Unosquare" }
+                new IdentifierType {Id = 1, Name = "NombreIdentifierType"}
             };
         }
     }

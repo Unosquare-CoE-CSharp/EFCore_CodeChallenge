@@ -27,10 +27,21 @@ namespace EFChallenge.Data.Configuration
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.Name).IsUnique();
 
-            builder.HasData(
+            builder.HasData(Get());
+        }
+
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
+        private List<ItemStatus> Get()
+        {
+            return new List<ItemStatus>()
+            {
                 new ItemStatus { Id = 1, Name = "In Warehouse" },
                 new ItemStatus { Id = 2, Name = "In Transit" },
-                new ItemStatus { Id = 3, Name = "Delivered" });
+                new ItemStatus { Id = 3, Name = "Delivered" }
+            };
         }
     }
 }

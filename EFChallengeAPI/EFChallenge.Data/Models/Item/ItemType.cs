@@ -12,6 +12,8 @@ namespace EFChallenge.Data.Models.Item
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
+
+        //Navigation Properties
         public ItemContainerConstraint ItemContainerConstraint { get; set; } = null!;
     }
 

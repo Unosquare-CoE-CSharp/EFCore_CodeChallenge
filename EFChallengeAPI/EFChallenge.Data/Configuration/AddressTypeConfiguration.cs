@@ -26,9 +26,20 @@ namespace EFChallenge.Data.Configuration
 
             builder.HasKey(x => x.Id);
 
-            builder.HasData(
+            builder.HasData(Get());
+        }
+
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
+        private List<AddressType> Get()
+        {
+            return new List<AddressType>()
+            {
                 new AddressType { Id = 1, Name = "Phsycal Address" },
-                new AddressType { Id = 2, Name = "IRS Address" });
+                new AddressType { Id = 2, Name = "IRS Address" }
+            };
         }
     }
 }

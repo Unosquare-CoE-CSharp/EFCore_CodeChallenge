@@ -23,17 +23,25 @@ namespace EFChallenge.Data.Configuration
         public void Configure(EntityTypeBuilder<CompanyAddress> builder)
         {
             builder.ToTable("CompanyAddress");
+
             builder.HasKey(x => x.Id);
-
-            //entityTypeBuilder.HasOne(z => z.Address).WithMany(z => z.CompanyAddresses).HasForeignKey(z => z.AdressId);
             builder.HasOne(z => z.Address).WithOne(z => z.CompanyAddress).HasForeignKey<CompanyAddress>(z => z.AddressId);
-
-            //entityTypeBuilder.HasOne(y => y.Company).WithMany(y => y.CompanyAddresses).HasForeignKey(y => y.CompanyId);
             builder.HasOne(y => y.Company).WithOne(y => y.CompanyAddress).HasForeignKey<CompanyAddress>(z => z.CompanyId);
 
-            builder.HasData(
+            builder.HasData(Get());
+        }
+
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
+        private List<CompanyAddress> Get()
+        {
+            return new List<CompanyAddress>()
+            {
                 new CompanyAddress { Id = 1, CompanyId = 1, AddressId = 1 },
-                new CompanyAddress { Id = 2, CompanyId = 1, AddressId = 2 });
+                new CompanyAddress { Id = 2, CompanyId = 1, AddressId = 2 }
+            };
         }
     }
 }

@@ -22,6 +22,6 @@ namespace EFChallenge.Data.Models.Item
         public ItemSubType? ItemSubType { get; set; } = null!;
         public ItemStatus ItemStatus { get; set; } = null!;
         public Item? ParentItem { get; set; } = null!;
-        public ItemIdentifier? ItemIdentifier { get; set; } = null!;
+        public ItemIdentifier? ItemIdentifier { get; set; }
     }
 }

@@ -12,10 +12,11 @@ namespace EFChallenge.Data.Models.Item
     public class ItemIdentifier
     {
         public int Id { get; set; }
-        public Guid ItemId  { get; set; }
+        public Guid? ItemId  { get; set; }
         public Guid ItemIdentifierId { get; set; }
 
-        public Item item { get; set; } = null!;
+        //Navigation Properties
+        public Item? item { get; set; }
         public Identifier identifier { get; set; } = null!;
 
 

@@ -32,10 +32,19 @@ namespace EFChallenge.Data.Configuration
             builder.HasOne(z => z.County).WithMany(z => z.Addresses).HasForeignKey(z => z.CountyId);
             builder.HasOne(y => y.AddressType).WithMany(y => y.Addresses).HasForeignKey(y => y.AddressTypeId);
 
-            builder.HasData(
-                new Address { Id = 1, AddressTypeId = 2, Line1 = "4800 Meadows Road, Suite 300 Lake Oswego", ZipPostalCode = "97035", City = "Portland", CountyId = 1 },
-                new Address { Id = 2, AddressTypeId = 1, Line1 = "Av. de las Américas 1536, Country Club", ZipPostalCode = "44637", City = "Guadalajara", CountyId = 2 });
+            builder.HasData(Get());
 
+        }
+
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
+        private List<Address> Get() {
+            return new List<Address>() {
+                new Address { Id = 1, AddressTypeId = 2, Line1 = "4800 Meadows Road, Suite 300 Lake Oswego", ZipPostalCode = "97035", City = "Portland", CountyId = 1 },
+                new Address { Id = 2, AddressTypeId = 1, Line1 = "Av. de las Américas 1536, Country Club", ZipPostalCode = "44637", City = "Guadalajara", CountyId = 2 }
+        };
         }
     }
 }

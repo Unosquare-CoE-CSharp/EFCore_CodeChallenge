@@ -23,16 +23,23 @@ namespace EFChallenge.Data.Configuration
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.ToTable("Country");
+
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(25).IsRequired();
+            
             builder.HasData(Get());
         }
 
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
         private List<Country> Get() {
             return new List<Country>() {
                 new Country { Id = 1, Name = "USA" },
                 new Country { Id = 2, Name = "Mexico" },
-                new Country { Id = 3, Name = "Argentina" }
+                new Country { Id = 3, Name = "Argentina" },
+                new Country { Id = 4, Name = "Bolivia" }
             };
         }
     }

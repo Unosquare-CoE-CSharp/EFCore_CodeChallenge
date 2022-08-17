@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFChallenge.Data.Migrations
 {
     [DbContext(typeof(EFChallengeContext))]
-    [Migration("20220711070503_AddConfigurationWithIEntityTypeConfiguration")]
-    partial class AddConfigurationWithIEntityTypeConfiguration
+    [Migration("20220816224856_Initial_Migration")]
+    partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -210,6 +210,11 @@ namespace EFChallenge.Data.Migrations
                         {
                             Id = 3,
                             Name = "Argentina"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Bolivia"
                         });
                 });
 
@@ -302,7 +307,15 @@ namespace EFChallenge.Data.Migrations
 
                     b.HasIndex("IdentifierTypeId");
 
-                    b.ToTable("Identifiers");
+                    b.ToTable("Identifier", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1d847c14-4722-47c4-bacf-bf9d3523345f"),
+                            Data = "Data test",
+                            IdentifierTypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.IdentifierType", b =>
@@ -315,11 +328,19 @@ namespace EFChallenge.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("IdentifierType", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "NombreIdentifierType"
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.Item", b =>
@@ -337,7 +358,7 @@ namespace EFChallenge.Data.Migrations
                     b.Property<int>("ItemTypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LocationId")
+                    b.Property<int?>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<Guid?>("ParentItemId")
@@ -354,6 +375,17 @@ namespace EFChallenge.Data.Migrations
                     b.HasIndex("ParentItemId");
 
                     b.ToTable("Item", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("61b2f604-1e09-4b49-bafe-a7f0ee8dc0a5"),
+                            ItemStatusId = 1,
+                            ItemSubTypeId = 1,
+                            ItemTypeId = 1,
+                            LocationId = 1,
+                            ParentItemId = new Guid("61b2f604-1e09-4b49-bafe-a7f0ee8dc0a5")
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemAddendum", b =>
@@ -376,6 +408,15 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ItemAddendum", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("02a76c70-dafe-4550-afb1-01e610f72ce1"),
+                            ItemId = new Guid("61b2f604-1e09-4b49-bafe-a7f0ee8dc0a5"),
+                            KeyField = "NameKeyField",
+                            Value = "Value001"
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemContainerConstraint", b =>
@@ -434,7 +475,7 @@ namespace EFChallenge.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<Guid>("ItemId")
+                    b.Property<Guid?>("ItemId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ItemIdentifierId")
@@ -443,12 +484,21 @@ namespace EFChallenge.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ItemId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ItemId] IS NOT NULL");
 
                     b.HasIndex("ItemIdentifierId")
                         .IsUnique();
 
                     b.ToTable("ItemIdentifier", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ItemId = new Guid("61b2f604-1e09-4b49-bafe-a7f0ee8dc0a5"),
+                            ItemIdentifierId = new Guid("1d847c14-4722-47c4-bacf-bf9d3523345f")
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemStatus", b =>
@@ -498,11 +548,19 @@ namespace EFChallenge.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ItemSubtype", (string)null);
+                    b.ToTable("ItemSubType", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "NameItemsubType"
+                        });
                 });
 
             modelBuilder.Entity("EFChallenge.Data.Models.Item.ItemType", b =>
@@ -658,9 +716,7 @@ namespace EFChallenge.Data.Migrations
                 {
                     b.HasOne("EFChallenge.Data.Models.Item.Item", "item")
                         .WithOne("ItemIdentifier")
-                        .HasForeignKey("EFChallenge.Data.Models.Item.ItemIdentifier", "ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EFChallenge.Data.Models.Item.ItemIdentifier", "ItemId");
 
                     b.HasOne("EFChallenge.Data.Models.Item.Identifier", "identifier")
                         .WithOne("ItemIdentifier")

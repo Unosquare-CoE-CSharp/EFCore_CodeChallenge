@@ -4,28 +4,27 @@
 // Company:  Unosquare 
 //-----------------------------------------------
 
-using EFChallenge.Data.Models.Company;
+using EFChallenge.Data.Models.Item;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFChallenge.Data.Configuration
 {
     /// <summary>
-    /// Class StateConfiguration
-    /// Implements <IEntityTypeConfiguration<State>
+    /// Class ItemAddendumConfiguration
+    /// Implements IEntityTypeConfiguration<ItemAddendum>
     /// </summary>
-    public class StateConfiguration : IEntityTypeConfiguration<State>
+    public class ItemAddendumConfiguration : IEntityTypeConfiguration<ItemAddendum>
     {
         /// <summary>
         /// Method that sets the properties of the class
         /// </summary>
         /// <param name="builder"> of type EntityTypeBuilder</param>
-        public void Configure(EntityTypeBuilder<State> builder)
+        public void Configure(EntityTypeBuilder<ItemAddendum> builder)
         {
-            builder.ToTable("State");
+            builder.ToTable("ItemAddendum");
 
             builder.HasKey(x => x.Id);
-            builder.HasOne(z => z.Country).WithMany(z => z.States).HasForeignKey(z => z.CountryId);
 
             builder.HasData(Get());
         }
@@ -34,14 +33,15 @@ namespace EFChallenge.Data.Configuration
         /// Method seed data
         /// </summary>
         /// <returns>Data list</returns>
-        private List<State> Get()
+        private List<ItemAddendum> Get()
         {
-            return new List<State>()
+            var addendumId = Guid.Parse("02a76c70-dafe-4550-afb1-01e610f72ce1");
+            var itemId = Guid.Parse("61b2f604-1e09-4b49-bafe-a7f0ee8dc0a5");
+
+            return new List<ItemAddendum>()
             {
-                new State { Id = 1, CountryId = 1, Name = "Oregon" },
-                new State { Id = 2, CountryId = 2, Name = "Jalisco" }
+                new ItemAddendum {Id = addendumId, ItemId = itemId, KeyField = "NameKeyField", Value = "Value001"}
             };
         }
     }
- }
-
+}

@@ -23,11 +23,24 @@ namespace EFChallenge.Data.Configuration
         public void Configure(EntityTypeBuilder<ItemType> builder)
         {
             builder.ToTable("ItemType");
+
             builder.HasKey(x => x.Id);
-            builder.HasData(
+
+            builder.HasData(Get());
+        }
+
+        /// <summary>
+        /// Method seed data
+        /// </summary>
+        /// <returns>Data list</returns>
+        private List<ItemType> Get()
+        {
+            return new List<ItemType>()
+            {
                 new ItemType { Id = 1, Name = "Coke" },
                 new ItemType { Id = 2, Name = "24 Cokes Package" },
-                new ItemType { Id = 3, Name = "Box with 4 Cokes Package" });
+                new ItemType { Id = 3, Name = "Box with 4 Cokes Package" }
+            };
         }
     }
 }

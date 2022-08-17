@@ -6,7 +6,6 @@
 
 namespace EFChallenge.Data.Models.Company
 {
-
     /// <summary>
     /// Class Company
     /// </summary>
@@ -15,6 +14,7 @@ namespace EFChallenge.Data.Models.Company
         public int Id { get; set; }
         public string Name { get; set; } = null!;
 
+        //Navigation Properties
         public CompanyAddress CompanyAddress { get; set; } = null!;
 
     }

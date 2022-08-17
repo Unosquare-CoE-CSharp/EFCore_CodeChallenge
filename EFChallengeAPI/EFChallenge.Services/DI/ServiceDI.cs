@@ -1,4 +1,9 @@
-﻿using EFChallenge.Data.Models;
+﻿//-----------------------------------------------
+// Proyect: EFChallenge 
+// Developers: Christian Alvarado 
+// Company:  Unosquare 2022
+//-----------------------------------------------
+
 using EFChallenge.Services.Interfaces;
 using EFChallenge.Services.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +27,6 @@ namespace EFChallenge.Services.DI
             serviceCollection.AddScoped<ICompanyService, CompanyService>();
             serviceCollection.AddScoped<IItemService, ItemService>();
             return serviceCollection;
-
         }
     }
 }

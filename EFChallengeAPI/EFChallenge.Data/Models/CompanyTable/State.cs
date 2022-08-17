@@ -16,6 +16,8 @@ namespace EFChallenge.Data.Models.Company
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int CountryId { get; set; }
+
+        //Navigation Properties
         public Country Country { get; set; } = null!;
         public List<County> ? Counties { get; set; }
 

@@ -1,30 +1,31 @@
 ﻿//-----------------------------------------------
-// Proyect: EFChallenge                         
-// Developers: Christian Alvarado               
-// Company:  Unosquare 2022                     
+// Proyect: EFChallenge 
+// Developers: Christian Alvarado 
+// Company:  Unosquare 
 //-----------------------------------------------
 
-using EFChallenge.Data.Models.Company;
+using EFChallenge.Data.Models.Item;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EFChallenge.Data.Configuration
 {
     /// <summary>
-    /// Class CompanyConfiguration
-    /// Implements <IEntityTypeConfiguration<Company>
+    /// Class ItemSubTypeConfiguration
+    /// Implements <IEntityTypeConfiguration<Country>
     /// </summary>
-    public class CompanyConfiguration : IEntityTypeConfiguration<Company>
+    public class ItemSubTypeConfiguration : IEntityTypeConfiguration<ItemSubType>
     {
         /// <summary>
         /// Method that sets the properties of the class
         /// </summary>
         /// <param name="builder"> of type EntityTypeBuilder</param>
-        public void Configure(EntityTypeBuilder<Company> builder)
+        public void Configure(EntityTypeBuilder<ItemSubType> builder)
         {
-            builder.ToTable("Company");
+            builder.ToTable("ItemSubType");
 
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).HasMaxLength(30).IsRequired();
 
             builder.HasData(Get());
         }
@@ -33,11 +34,9 @@ namespace EFChallenge.Data.Configuration
         /// Method seed data
         /// </summary>
         /// <returns>Data list</returns>
-        private List<Company> Get()
-        {
-            return new List<Company>()
-            {
-                new Company { Id = 1, Name = "Unosquare" }
+        private List<ItemSubType> Get() {
+            return new List<ItemSubType>() {
+                new ItemSubType {Id = 1, Name = "NameItemsubType"}
             };
         }
     }
